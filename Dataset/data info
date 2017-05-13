@@ -1,0 +1,89 @@
+['color', 'director_name', 'num_critic_for_reviews', 'duration',
+       'director_facebook_likes', 'actor_3_facebook_likes', 'actor_2_name',
+       'actor_1_facebook_likes', 'gross', 'genres', 'actor_1_name',
+       'movie_title', 'num_voted_users', 'cast_total_facebook_likes',
+       'actor_3_name', 'facenumber_in_poster', 'plot_keywords',
+       'movie_imdb_link', 'num_user_for_reviews', 'language', 'country',
+       'content_rating', 'budget', 'title_year', 'actor_2_facebook_likes',
+       'imdb_score', 'aspect_ratio', 'movie_facebook_likes']
+
+info()
+
+RangeIndex: 5043 entries, 0 to 5042
+Data columns (total 28 columns):
+color                        5024 non-null object
+director_name                4939 non-null object
+num_critic_for_reviews       4993 non-null float64
+duration                     5028 non-null float64
+director_facebook_likes      4939 non-null float64
+actor_3_facebook_likes       5020 non-null float64
+actor_2_name                 5030 non-null object
+actor_1_facebook_likes       5036 non-null float64
+gross                        4159 non-null float64
+genres                       5043 non-null object
+actor_1_name                 5036 non-null object
+movie_title                  5043 non-null object
+num_voted_users              5043 non-null int64
+cast_total_facebook_likes    5043 non-null int64
+actor_3_name                 5020 non-null object
+facenumber_in_poster         5030 non-null float64
+plot_keywords                4890 non-null object
+movie_imdb_link              5043 non-null object
+num_user_for_reviews         5022 non-null float64
+language                     5031 non-null object
+country                      5038 non-null object
+content_rating               4740 non-null object
+budget                       4551 non-null float64
+title_year                   4935 non-null float64
+actor_2_facebook_likes       5030 non-null float64
+imdb_score                   5043 non-null float64
+aspect_ratio                 4714 non-null float64
+movie_facebook_likes         5043 non-null int64
+
+describe()
+
+       num_critic_for_reviews     duration  director_facebook_likes  \
+count             4993.000000  5028.000000              4939.000000
+mean               140.194272   107.201074               686.509212
+std                121.601675    25.197441              2813.328607
+min                  1.000000     7.000000                 0.000000
+25%                 50.000000    93.000000                 7.000000
+50%                110.000000   103.000000                49.000000
+75%                195.000000   118.000000               194.500000
+max                813.000000   511.000000             23000.000000
+       actor_3_facebook_likes  actor_1_facebook_likes         gross  \
+count             5020.000000             5036.000000  4.159000e+03
+mean               645.009761             6560.047061  4.846841e+07
+std               1665.041728            15020.759120  6.845299e+07
+min                  0.000000                0.000000  1.620000e+02
+25%                133.000000              614.000000  5.340988e+06
+50%                371.500000              988.000000  2.551750e+07
+75%                636.000000            11000.000000  6.230944e+07
+max              23000.000000           640000.000000  7.605058e+08
+       num_voted_users  cast_total_facebook_likes  facenumber_in_poster  \
+count     5.043000e+03                5043.000000           5030.000000
+mean      8.366816e+04                9699.063851              1.371173
+std       1.384853e+05               18163.799124              2.013576
+min       5.000000e+00                   0.000000              0.000000
+25%       8.593500e+03                1411.000000              0.000000
+50%       3.435900e+04                3090.000000              1.000000
+75%       9.630900e+04               13756.500000              2.000000
+max       1.689764e+06              656730.000000             43.000000
+       num_user_for_reviews        budget   title_year  \
+count           5022.000000  4.551000e+03  4935.000000
+mean             272.770808  3.975262e+07  2002.470517
+std              377.982886  2.061149e+08    12.474599
+min                1.000000  2.180000e+02  1916.000000
+25%               65.000000  6.000000e+06  1999.000000
+50%              156.000000  2.000000e+07  2005.000000
+75%              326.000000  4.500000e+07  2011.000000
+max             5060.000000  1.221550e+10  2016.000000
+       actor_2_facebook_likes   imdb_score  aspect_ratio  movie_facebook_likes
+count             5030.000000  5043.000000   4714.000000           5043.000000
+mean              1651.754473     6.442138      2.220403           7525.964505
+std               4042.438863     1.125116      1.385113          19320.445110
+min                  0.000000     1.600000      1.180000              0.000000
+25%                281.000000     5.800000      1.850000              0.000000
+50%                595.000000     6.600000      2.350000            166.000000
+75%                918.000000     7.200000      2.350000           3000.000000
+max             137000.000000     9.500000     16.000000         349000.000000
