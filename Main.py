@@ -80,12 +80,32 @@ num_pipeline = Pipeline([
     ('std_scaler', StandardScaler()),
 ])
 
-data_prepared = num_pipeline.fit_transform(raw_data)
+
 
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVR
 
-data_labels = raw_data['imdb_score']
+train_set,test_set = train_test_split(raw_data,test_size=0.2,random_state=10)
+data_train = num_pipeline.fit_transform(train_set)
+data_train_labels = train_set['imdb_score']
 lin_reg = LinearRegression()
-lin_reg.fit(data_prepared, data_labels)
+lin_reg.fit(data_train, data_train_labels)
 
-lin_reg.predict(data_prepared[1:10])
+data_test = num_pipeline.fit_transform(test_set)
+data_test_labels = test_set['imdb_score']
+lin_mse = mean_squared_error(lin_reg.predict(data_test),data_test_labels)
+
+# SVM regressor
+
+svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
+svr_lin = SVR(kernel='linear', C=1e3)
+svr_poly = SVR(kernel='poly', C=1e3, degree=2)
+y_rbf = svr_rbf.fit(data_train, data_train_labels).predict(data_test)
+y_lin = svr_lin.fit(data_train, data_train_labels).predict(data_test)
+y_poly = svr_poly.fit(data_train, data_train_labels).predict(data_test)
+
+rbf_mse = mean_squared_error(y_rbf,data_test_labels)
+linsvr_mse = mean_squared_error(y_lin,data_test_labels)
+poly_mse = mean_squared_error(y_poly,data_test_labels)
